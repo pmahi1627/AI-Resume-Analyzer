@@ -19,3 +19,13 @@
     padding: 20px;
     box-sizing: border-box;
 }
+.cardPercentage{
+    font-size: 34px;
+    text-align: center;
+}
+@media screen and (max-width: 780px) {
+    .HistoryCardBlock{
+        grid-template-columns: 1fr;
+    }
+    
+}
