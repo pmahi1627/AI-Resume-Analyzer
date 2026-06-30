@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Dashboard.module.css'
 import GradeIcon from '@mui/icons-material/Grade';
 import Skeleton from '@mui/material/Skeleton';
+import WithAuthHOC from '../../utils/HOC/withAuthHOC';
 const Dashboard = () => {
   return (
     <div className = {styles.Dashboard}>
@@ -57,4 +58,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default WithAuthHOC(Dashboard);
