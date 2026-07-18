@@ -14,7 +14,7 @@ exports.register = async(req,res) => {
             })
         }
         return res.status(200).json({
-            message: 'Welcom Back',
+            message: 'Welcome Back',
             user:userExist
         })
     }catch(err){

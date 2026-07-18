@@ -7,7 +7,7 @@ const AuthProvider = ({ children })=>{
     var userInfoData = localStorage.getItem('userInfo')
     const [isLogin,setLogin] = useState(login?login:false);
     const[userInfo,setUserInfo] = useState(userInfoData?JSON.parse(userInfoData):null);
-
+    
     return(
         <AuthContext.Provider
             value = {{isLogin,setLogin,userInfo,setUserInfo}}>
