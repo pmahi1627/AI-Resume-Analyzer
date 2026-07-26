@@ -1,8 +1,4 @@
 .env
+conn.js
 uploads/
 node_modules/
-
-
-conn.js
-.env
-uploads/
