@@ -23,11 +23,13 @@ const Login = () => {
 
     const response = await axios.post('/api/user', userData);
 
-    setUserInfo(response.data.user);
-    localStorage.setItem("userInfo", JSON.stringify(response.data.user));
+console.log("Backend response:", response.data);
+
+setUserInfo(response.data.user);
+localStorage.setItem("userInfo", JSON.stringify(response.data.user));
 
     setLogin(true);
-    localStorage.setItem("isLogin", true);
+    localStorage.setItem("isLogin", "true");
 
     navigate('/dashboard');
   } catch (err) {
