@@ -13,14 +13,17 @@ const SideBar = () => {
   
 
   const {isLogin,setLogin,userInfo,setUserInfo} = useContext(AuthContext);
+  console.log("USER INFO:", userInfo);
 
-  const handleLogout = ()=>{
-    localStorage.clear();
-    setLogin(false);
-    setUserInfo(null);
-    navigate('/')
+const handleLogout = () => {
+  localStorage.removeItem("isLogin");
+  localStorage.removeItem("userInfo");
 
-  }
+  setLogin(false);
+  setUserInfo(null);
+
+  navigate("/");
+};
 
 
   return (

@@ -1,8 +1,12 @@
+
 import React, { useState } from 'react'
 import styles from './Dashboard.module.css'
 import GradeIcon from '@mui/icons-material/Grade';
 import Skeleton from '@mui/material/Skeleton';
 import WithAuthHOC from '../../utils/HOC/withAuthHOC';
+import { useContext } from 'react';
+import { AuthContext } from '../../utils/AuthContext';
+import axios from '../../utils/axios';
 const Dashboard = () => {
   const[uploadFileText, setUploadFileText] = useState("Upload your resume");
   const [loading, setLoading] = useState(false);
@@ -77,11 +81,14 @@ const Dashboard = () => {
       <div className={styles.DashboardRight}>
         <div className = {styles.DashboardRightTopCard}>
           <div>Analyze with AI</div>
-          <img 
+         
+
+  <img
   className={styles.profileImage}
-  src={userInfo?.photoUrl }
+  src={userInfo?.photoUrl}
   alt="Profile"
 />
+
 
 <h2>{userInfo?.name }</h2>
         </div>
