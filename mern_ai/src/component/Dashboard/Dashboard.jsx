@@ -79,39 +79,93 @@ const Dashboard = () => {
         </div>
       </div>
       <div className={styles.DashboardRight}>
-        <div className = {styles.DashboardRightTopCard}>
-          <div>Analyze with AI</div>
-         
 
-  <img
-  className={styles.profileImage}
-  src={userInfo?.photoUrl}
-  alt="Profile"
-/>
+    {/* USER PROFILE CARD */}
+    <div className={styles.DashboardRightTopCard}>
 
+        <div className={styles.userProfile}>
+            <img
+                src={userInfo?.photoUrl}
+                alt="Profile"
+                className={styles.profileImage}
+            />
 
-<h2>{userInfo?.name }</h2>
+            <div className={styles.userDetails}>
+                <div className={styles.userName}>
+                    {userInfo?.name || "User"}
+                </div>
+
+                <div className={styles.userEmail}>
+                    {userInfo?.email}
+                </div>
+            </div>
         </div>
-      
-      {
-        result && <div className = {styles.DashboardRightTopCard}>
-        <div>Result</div>
-        <div style = {{display: 'flex', justifyContent: 'center',alignItems: 'center',gap:20}}>
-          <h1>{result?.score}%</h1>
-          <GradeIcon sx = {{fontSize: 30}} />
-        </div>
-        <div className = {styles.feedback}>
-          <div>Feedback:</div>
-          <div>{result?.feedback}</div>
-        </div> 
-      </div> 
-      }
-      {
-        loading && <Skeleton variant="rectangular" sx= {{borderRadius:"20px"}} width={280} height={200} />
-      }
-      
-      </div>
+
     </div>
+
+
+    {/* AI CARD */}
+    <div className={styles.DashboardRightTopCard}>
+
+        <div className={styles.aiCardTitle}>
+            Analyze with AI
+        </div>
+
+        <div className={styles.aiCardText}>
+            Upload your resume and add a job description to get your match score.
+        </div>
+
+    </div>
+
+
+    {/* RESULT CARD */}
+    {
+        result && (
+            <div className={styles.DashboardRightTopCard}>
+
+                <div className={styles.resultTitle}>
+                    Resume Match
+                </div>
+
+                <div className={styles.scoreContainer}>
+
+                    <h1>{result?.score}%</h1>
+
+                    <GradeIcon sx={{ fontSize: 30 }} />
+
+                </div>
+
+                <div className={styles.feedback}>
+
+                    <div>Feedback</div>
+
+                    <p>
+                        {result?.feedback}
+                    </p>
+
+                </div>
+
+            </div>
+        )
+    }
+
+
+    {/* LOADING */}
+    {
+        loading && (
+            <Skeleton
+                variant="rectangular"
+                sx={{
+                    borderRadius: "16px"
+                }}
+                width="100%"
+                height={200}
+            />
+        )
+    }
+
+</div>
+</div>
     
   )
 }

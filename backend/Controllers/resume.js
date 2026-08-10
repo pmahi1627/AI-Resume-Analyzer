@@ -80,9 +80,17 @@ short explanation
     }catch(err){
 
         console.log(err);
-        res.status(500).json({
-            message:"Server Error",
-            error:err.message
-        });
+        res.status(500).json({errir:'Server Error',message:err.message});
+    }
+}
+
+exports.getResumeForAdmin = async(req,res)=>{
+    try{
+        let resumes = await ResumeModel.find({}).sort({createdAt: -1}).populate('user');
+        return res.status(200).json({message: "Fetched All History", resumes: resumes});
+
+    }catch(err){
+        console.log(err);
+        res.status(500).json({errir:'Server Error',message:err.message});
     }
 };
