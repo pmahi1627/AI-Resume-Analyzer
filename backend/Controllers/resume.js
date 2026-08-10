@@ -83,6 +83,27 @@ short explanation
         res.status(500).json({errir:'Server Error',message:err.message});
     }
 }
+exports.getAllResumeForUser = async (req, res) => {
+    try {
+        const { user } = req.params;
+
+        let resumes = await ResumeModel
+            .find({ user: user })
+            .sort({ createdAt: -1 });
+
+        return res.status(200).json({
+            message: "Your Previous History",
+            resumes: resumes
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            errir: 'Server Error',
+            message: err.message
+        });
+    }
+};
 
 exports.getResumeForAdmin = async(req,res)=>{
     try{

@@ -4,6 +4,7 @@ import Skeleton from '@mui/material/Skeleton'
 import { useState, useEffect } from 'react'
 import axios from "../../utils/axios"
 import { AuthContext } from '../../utils/AuthContext'
+import WithAuthHOC from '../../utils/HOC/withAuthHOC';
 
 const History = () => {
 
