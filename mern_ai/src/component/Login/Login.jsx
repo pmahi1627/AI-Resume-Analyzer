@@ -39,15 +39,32 @@ localStorage.setItem("userInfo", JSON.stringify(response.data.user));
 };
   return (
     <div className={styles.Login}>
+
         <div className={styles.LoginCard}>
-            <div className = {styles.LoginCardTitle}>
-                <h1>Login</h1>
-                <KeyIcon style={{fontSize:'50px'}}/>
+
+            <KeyIcon className={styles.keyIcon} />
+
+            <h1>Login</h1>
+
+            <p className={styles.loginSubtitle}>
+                Sign in to continue to Resume Screening
+            </p>
+
+            <div
+                className={styles.googleBtn}
+                onClick={handleLogin}
+            >
+                <GoogleIcon className={styles.googleIcon} />
+
+                <span>
+                    Sign in with Google
+                </span>
             </div>
-            <div className= {styles.googleBtn}onClick = {handleLogin}> <GoogleIcon sx={{fontSize:'45px',color:'red'}}/> Sign in with Google!</div>
+
         </div>
+
     </div>
-  )
+)
 }
 
 export default Login 

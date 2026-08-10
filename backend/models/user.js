@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: "user"
     },
-    photoUrl: {
+    photoURL: {
         type: String,
     }
 },{timestamps:true});

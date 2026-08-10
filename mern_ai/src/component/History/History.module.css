@@ -1,31 +1,122 @@
-.History{
-    flex:0.8;
+.History {
+    flex: 0.8;
     height: 100vh;
-    overflow:auto;
-    padding:50px;
-    background-color: whitesmoke;
+    overflow-y: auto;
+    padding: 40px;
     box-sizing: border-box;
+    background-color: #f4f6f5;
 }
-.HistoryCardBlock{
+
+.HistoryBlock {
     width: 100%;
+
     display: grid;
-    gap:20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.HistoryCard{
-    width: 100%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    border-radius: 20px;
-    padding: 20px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 20px;
+
     box-sizing: border-box;
 }
-.cardPercentage{
-    font-size: 34px;
-    text-align: center;
+
+.HistoryCard {
+    min-width: 0;
+    min-height: 220px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dfe6e3;
+
+    border-radius: 16px;
+
+    box-shadow: 0 6px 18px rgba(31, 41, 51, 0.06);
+
+    transition: all 0.2s ease;
 }
+
+.HistoryCard:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 24px rgba(31, 41, 51, 0.10);
+}
+
+.cardPercentage {
+    width: fit-content;
+
+    padding: 7px 12px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    background-color: #edf5f4;
+
+    border: 1px solid #d3e4e1;
+
+    color: #2f6f73;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.HistoryCard h2 {
+    margin: 0 0 12px;
+
+    color: #263238;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.HistoryCard p {
+    margin: 8px 0;
+
+    color: #69777b;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.HistoryCard p:last-child {
+    margin-top: 18px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid #e5e9e7;
+
+    color: #899496;
+
+    font-size: 13px;
+}
+
+.History :global(.MuiSkeleton-root) {
+    width: 100% !important;
+    border-radius: 16px !important;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .History {
+        padding: 30px;
+    }
+
+    .HistoryBlock {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 780px) {
-    .HistoryCardBlock{
+
+    .History {
+        padding: 20px;
+    }
+
+    .HistoryBlock {
         grid-template-columns: 1fr;
     }
-    
 }
